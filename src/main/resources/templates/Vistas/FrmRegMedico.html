@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Registro de Médicos</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .form-container {
+            margin-top: 30px;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        @media (max-width: 768px) {
+            .form-container {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-4">
+        <div class="text-center mb-4">
+            <h1 class="text-primary">Registrar Médico</h1>
+        </div>
+        
+        <div class="form-container">
+            <form th:action="@{/Vistas/GuardarMedico}" method="post" th:object="${regmedico}">
+                <input type="hidden" th:field="*{idmedicot3}">
+                
+                <div class="form-group">
+                    <label>Nombre</label>
+                    <input type="text" class="form-control" th:field="*{nombret3}" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Apellido</label>
+                    <input type="text" class="form-control" th:field="*{apellidot3}" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" class="form-control" th:field="*{emailt3}" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Estado Civil</label>
+                    <input type="text" class="form-control" th:field="*{estadocivilt3}" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Fecha de Nacimiento</label>
+                    <input type="date" class="form-control" th:field="*{fechanacimt3}" required>
+                </div>
+                
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary">Registrar Médico</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
